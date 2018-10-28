@@ -1,0 +1,13 @@
+{% extends "base/base.html" %}
+
+{% block title %}
+Newsletter 
+{% endblock %}
+
+{% block body %}
+{% if error_auth %}Connectez-vous avant{% endif %}
+</ul><h1>Newsletter</h1>
+<div>
+  Newsletter envoyé.
+</div>
+{% endblock %}

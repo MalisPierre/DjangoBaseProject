@@ -1,0 +1,27 @@
+{% extends "base/base.html" %}
+
+{% block body %}
+<h1>Change Photo</h1>
+
+<form action="{% url 'profil.views_change_profil_infos.change_photo' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  
+  <input id="photo" type="file" name="photo"/>
+  <input type="submit" value="Upload" />
+  </form>
+
+
+
+<!--
+<form action="{% url 'profil.views_change_profil_infos.change_photo' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <p>{{ form.non_field_errors }}</p>
+  <p>{{ form.docfile.label_tag }} </p>
+  <p>
+    {{ form.docfile.errors }}
+    {{ form.docfile }}
+  </p>
+  <p><input type="submit" value="Upload" /></p>
+</form>-->
+
+{% endblock %}

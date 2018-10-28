@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    
+    <meta charset="utf-8">
+0;136;0c  {% block head %}
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href="{% static 'meterialize/css/materialize.min.css' %}"  media="screen,projection"/>
+     <link type="text/css" rel="stylesheet" href="{% static 'base/base.css' %}"  />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+      {% block title %}
+      {{ website_name }}
+      {% endblock %}
+	</title>
+  </head>
+  {% endblock %}
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="navbar-fixed">
+      <nav>
+	<div class="nav-wrapper" id ="header">
+	  <a id="logo" href="{% url 'common.views_main.home' %}">
+	    <img class="brand-logo" src="{% static 'base/logo.png' %}" height = "100px" alt="" />
+	  </a>
+
+	  
+	  <div>
+	    <div>    
+	  <ul id="main_nav" class="right hide-on-med-and-down">
+	    
+	    <li>
+	      <a class="waves-effect waves-light btn red accent-2" href="#actualites">Actualités</a>
+	      <a class="waves-effect waves-light btn red accent-2" href="#parcours">Parcours</a>
+	      <a class="waves-effect waves-light btn red accent-2" href="#feedback">Feedback</a>
+	      <a class="waves-effect waves-light btn red accent-2" href="#events">Events</a>
+	      <a class="waves-effect waves-light btn red accent-2" href="#points_system">Système de Points</a>
+	    </li>
+	  </ul>
+	    </div>
+	  </div>
+      </nav>
+      </div>
+    </header>
+    </div>
+     <div id ="body" class="red lighten-5">
+       <br/><br/><br/>
+       {% block body %}
+       {% endblock %}
+     </div>
+
+
+     
+
+     
+     <footer class="page-footer red darken-3">
+       <div class="container">
+	 <div class="row">
+	   <div class="col l4 offset-l2 s12">
+	     <h5 class="white-text">Liens</h5>
+	     <ul>
+	       <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/Eco-Go-1684647468484751/?fref=ts"> <img height="42" width="42" class="brand-logo" src="{% static 'base/facebook_logo.png' %}" alt="" /></a></li>
+	       <li><a class="grey-text text-lighten-3" href="#!"><img height="42" width="42" class="brand-logo" src="{% static 'base/twitter_logo.png' %}" alt=""></a></li>
+	     </ul>
+	   </div>
+	 </div>
+       </div>
+       <div class="footer-copyright">
+	 <div class="container">
+	   © 2016 Copyright {{ website_name }}
+	 </div>
+       </div>
+     </footer>
+     <script>
+       var options = [
+       {selector: '.home_summary_class', offset: 200, callback: 'globalFunction()' },
+       {selector: '.other-class', offset: 200, callback: 'globalFunction()' },
+       ];
+         Materialize.scrollFire(options);
+     </script>
+     <script>
+       $('a').click(function(){
+       $('html, body').animate({
+       scrollTop: $( $.attr(this, 'href') ).offset().top
+       }, 500);
+       return false;
+       });
+     </script>
+     
+     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script type="text/javascript" src="../../../front_end/static/js/materialize.min.js"></script>
+     {% include 'material/includes/material_css.html' %}
+     <script src= "{% static 'material/js/jquery-2.2.0.js' %}"></script>
+     {% include 'material/includes/material_js.html' %}
+  </body>
+</html>
